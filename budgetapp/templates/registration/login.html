@@ -1,0 +1,44 @@
+{% extends 'budgetapp/base.html' %}
+
+{% block content %}
+
+<div id="index-banner">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h4> <i class="material-icons" >person</i>Connexion :</h4>
+        
+        <form action method="POST">
+    
+            {% csrf_token %}
+            <div>
+                <label>Login :</label>
+                <input type="text" name="login">
+            </div>
+            <div>
+                <label>Password :</label>
+                <input type="password" name="pwd">
+            </div>
+            <div>
+                <input type="submit" value="Se connecter">
+            </div>
+        </form>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  <div id="index-banner">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+            <h4> Veuillez entrez vos informations de connexion </h4>
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+{% endblock  %} 

@@ -1,0 +1,23 @@
+{% extends 'budgetapp/base.html' %}
+
+{% block content %}
+
+<div id="index-banner">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <br><br>
+        <h1 class="header center teal-text text-lighten-2">Expense Tracker</h1>
+        <div class="row center">
+          <h5 class="col s12">an application that will help you manage your expenses</h5>
+        </div>
+        <div class="row center">
+          <h5 class="col s12">This spreadsheet is a simple expense tracker or budget tracker. It lets you record your expenses</h5>
+        </div>
+        <div class="row center">
+          <a href="{% url 'budgetapp:login'%}"  class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
+        </div>
+        <br><br>
+      </div>
+    </div>
+  </div>
+{% endblock  %} 

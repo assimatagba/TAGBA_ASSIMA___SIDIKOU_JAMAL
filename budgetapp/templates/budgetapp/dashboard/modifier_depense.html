@@ -1,0 +1,23 @@
+{% extends 'budgetapp/dashboard/base.html' %}
+{% block title %}Dashboard  {{ utilisateur.nom }}{% endblock %}
+
+{% block content %}
+<div claas="container">
+
+    <h1>Modifiez cette dépense</h1>
+    <form action="#" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        
+        {% if messages %}
+        {% for message in messages %}
+            {{  message }}
+        {% endfor %}
+        {% endif %}
+        <div>
+            <input type="submit" value="Continuer">
+        </div>
+    </form>
+    
+</div>
+{% endblock  %} 

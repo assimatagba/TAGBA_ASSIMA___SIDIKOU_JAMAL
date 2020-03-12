@@ -1,0 +1,56 @@
+{% extends 'budgetapp/dashboard/base.html'%}
+
+{% block title %}Dashboard  {{ utilisateur.nom }}{% endblock %}
+
+{% block content %}
+    
+    {% if listes_depenses %}
+        <h3> La liste des depenses que vous avez faites ce mois ci:</h3>
+        <section class="section section-expenses">
+            <div class="row">
+                    <a href="{% url 'budgetapp:ajouter_depense' %}" class="btn-floating waves-effect waves-light btn-large pulse">
+                        <i class="large material-icons">add</i>
+                    </a>
+            </div>
+        <ul class="z-depth-1">
+            {% for liste_depense in listes_depenses %}
+                <li>
+                    <div class="card-panel z-depth-0 expense">
+                        <div class="row">
+                            <div class="col 16">
+                                <span class="title">{{ liste_depense.pk }}</span>
+                            </div>
+                            <div class="col 16">
+                                <span class="title">{{ liste_depense.titre }}</span>
+                            </div>
+                            <div class="col 13">
+                                <span class="title">{{ liste_depense.montant }}</span>
+                            </div>
+                            <div class="col 11">
+                                <span class="title">{{ liste_depense.date_depense| date:"d-m-Y" }}</span>
+                            </div>
+
+                            
+                            <a href="{% url 'budgetapp:supprimer_depense' liste_depense.pk %}">
+                                <i class="material-icons red-teal-text right">close</i>
+                            </a>
+                            <a href="{% url 'budgetapp:modifier_depense' liste_depense.pk %}">
+                                <i class="material-icons red-teal-text right">mode_edit</i>
+                            </a>
+                        </div>
+                    </div>
+                </li>
+                {% endfor %} 
+    {% else %}
+        <div class="noexpense center">
+            <h3 class="grey-text">Désolée, vous n'avez pas encore de depenses ! </h3>
+            <a href="{% url 'budgetapp:ajouter_depense' %}" class="btn-floating waves-effect waves-light btn-large pulse">
+                <i class="large material-icons">add</i>
+            </a>
+        </div>
+    {% endif %}
+        </section>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+{% endblock %}

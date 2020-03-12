@@ -1,0 +1,25 @@
+{% extends 'budgetapp/dashboard/base.html' %}
+{% block title %}Dashboard  {{ utilisateur.nom }}{% endblock %}
+
+{% block content %}
+
+<h1>Ajouter vos budgets</h1>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>Désignation de la depense:</label>
+        <input type="text" name="titre" placeholder="Désignation" required>
+    </div>
+    <div>
+        <label>Montant de la depense:</label>
+        <input type="number" name="montant" placeholder="Montant" required>
+    </div>
+
+    <div>
+        <input type="submit" value="Continuer">
+    </div>
+    
+
+</form>
+
+{% endblock  %} 

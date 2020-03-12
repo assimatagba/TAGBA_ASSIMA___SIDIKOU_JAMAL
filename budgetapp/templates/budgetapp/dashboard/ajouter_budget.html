@@ -1,0 +1,27 @@
+{% extends 'budgetapp/base.html' %}
+
+{% block content %}
+
+<h1>Ajouter vos budgets</h1>
+<form action="#" method="POST">
+    {% csrf_token %}
+    <div>
+        <label>Revenus Fixes Total:</label>
+        <input type="number" name="budget" placeholder="Last_name" required>
+    </div>
+    <div>
+        <label>Montant à économiser :</label>
+        <input type="number" name="sommeEconomie" placeholder="First_name" required>
+    </div>
+    <div>
+        <label>Dépenses Fixes :</label>
+        <input type="number" name="totalDepense" placeholder="Login" required>
+    </div>
+
+    <div>
+        <input type="submit" value="Continuer">
+    </div>
+    
+
+</form>
+{% endblock  %} 
